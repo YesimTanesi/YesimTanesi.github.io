@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>PROJE</title>
+                <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+                <link rel="stylesheet" href="fonts/font-awesome.min.css">
+                <link rel="stylesheet" href="css/Kendicssim.css">
+            </head>
+            
+            <body>
+                <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><strong style="color:#fff;">Online Anketör</strong><img src="js/img/img_145403.png" id="logo"></a>
+                        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li  role="presentation"><a href="#" style="color:#fff;">Hoşgeldiniz </a></li>
+                            <li id="link" role="presentation"><a href="anket-hazirlama.html" style="color:#fff;">Anket Hazırlama</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+<div class="col-md-12" id="cerceve">
+    <img src="js/img/giris.jpg" id="giris">
+    <div id="formekrani" class="alert alert-danger giris" >
+        <center><h2>Anket Hazırlama Portalı Online Anketör</h2></center>
+        <label >Kullanıcı Adı</label>
+        <input type="text" class="form-control text" id="kuladi">
+        <label >Parola</label>
+        <input type="password" class="form-control text"  id="parola">
+        <br>
+        <div id="uyari1"></div>
+        <br>
+        <center>
+        <button class="btn btn-danger" id="btnGiris">Giriş Yap</button>
+        <button class="btn btn-primary" id="temizle">Temizle</button>
+    </center>
+    </div>
+</div>
+</div>
+
+    <div id="anasayfa">
+        <div class="jumbotron"> 
+            <h1><strong>Online Anketör</strong></h1>
+            <p>Her gün 16 milyon soruya yanıt alan bu anket platformunu kullanın. </p>
+            <p></p>
+        </div>
+    </div>
+    <div class="container site-section" id="welcome">
+        <h1><strong>Online Anketör'e Hoş Geldiniz</strong></h1>
+        <p>Anketleri kolayca oluşturun, gönderin ve analiz edin. İhtiyaçlarınıza özel olarak tasarlanmış profesyonel anketler oluşturun. </p>
+    </div>
+    <div class="dark-section" id="end">
+        <div class="container site-section" id="why">
+            <h1 id="caption"><strong>Neden Online Anketör ?</strong></h1>
+            <div class="row">
+                <div class="col-md-4 item"><i class="fa fa-question"></i>
+                    <h2><strong>Doğru Soruları Sorun</strong></h2>
+                    <p> Sezgisel araçlarımız, profesyonel anketleri hızlı ve kolay bir şekilde oluşturmanızı sağlar. </p>
+                </div>
+                <div class="col-md-4 item"><i class="fa fa-share-alt"></i>
+                    <h2><strong>Doğru Kişilere Ulaşın</strong></h2>
+                    <p>Anketleri e-posta ile gönderin, sosyal medyada, web sitenizde ve daha birçok yerde paylaşın. </p>
+                </div>
+                <div class="col-md-4 item"><i class="fa fa-heart"></i>
+                    <h2><strong>Görüşler Elde Edin</strong> </h2>
+                    <p>Özel raporlar ve profesyonel grafikler oluşturmak için filtrelerden faydalanın. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12" id="footer">
+        <p id="footeryazi"><a href="index.html">Anket Hazırlama Portalı</a> | Yeşim Vatantürk | Tüm Hakları Saklıdır.</p>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script> 
+    $(function () { 
+        $("#anasayfa").css({
+            "display":"none"
+        })
+        $("#welcome").css({
+            "display":"none"
+        })
+        $("#end").css({
+            "display":"none"
+        })
+        $("#footer").css({
+            "display":"none"
+        })
+        $("#link").css({
+            "display":"none"
+        })
+
+        $("#formekrani").css({
+                "width": "30%",
+                "position": "fixed",
+                "top": "-500px",
+                "left": "35%",
+                "right":"35%"
+                
+            })
+    
+            $(document).ready(function(){ 
+                $("#formekrani").animate({
+                    "top": "150px",
+                    "left": "15%"
+            },1000)
+            $("#kuladi").val("");
+            $("#parola").val("");
+            })
+           
+            $("#btnGiris").click(function(){
+                var giris = $("#kuladi").val();
+                var sifre = $("#parola").val();
+                if( giris == "admin")
+
+            {
+                if ( sifre == "admin")
+                {
+                $("#giris").animate({
+                    "opacity":"0.0"
+                })
+                $("#giris").css({
+                    "display":"none"
+                })
+
+            $("#formekrani").animate({
+                "top": "-500px",
+                "left": "35%",
+                "opacity":"0.0"
+            },1000)
+
+            $("#anasayfa").css({
+            "display":"inherit",
+            "opacity":"0.0"
+        })
+        $("#welcome").css({
+            "display":"inherit",
+            "opacity":"0.0"
+        })
+        $("#end").css({
+            "display":"inherit",
+            "opacity":"0.0"
+        })
+        $("#link").css({
+            "display":"inherit",
+            "opacity":"0.0"
+        })
+        $("#footer").css({
+            "display":"inherit",
+            "opacity":"0.0"
+        })
+        $("#anasayfa").animate({
+            
+            "opacity":"1.0"
+        }, 1000)
+        $("#welcome").animate({
+            
+            "opacity":"1.0"
+        }, 1000)
+        $("#end").animate({
+            
+            "opacity":"1.0"
+        }, 1000)
+        $("#link").animate({
+            
+            "opacity":"1.0"
+        }, 1000)
+        $("#footer").animate({
+            
+            "opacity":"1.0"
+        }, 1000)
+            
+            }
+            else
+            {
+                $("#uyari1").fadeIn(1000);
+              $("#uyari1").html("Kullanıcı Adı veya Parola Hatalı!");
+              $("#uyari1").removeClass();
+              $("#uyari1").addClass("alert alert-info");
+              $("#uyari1").fadeOut(3000);
+              return false;
+            }
+            
+        }
+        else
+        {
+            $("#uyari1").fadeIn(1000);
+              $("#uyari1").html("Kullanıcı Adı veya Parola Hatalı!");
+              $("#uyari1").removeClass();
+              $("#uyari1").addClass("alert alert-info");
+              $("#uyari1").fadeOut(3000);
+              return false;
+        }
+            })
+$("#temizle").click(function(){
+    $("#kuladi").val("");
+            $("#parola").val("");
+})
+
+
+    })
+    </script>
+</body>
+
+</html>

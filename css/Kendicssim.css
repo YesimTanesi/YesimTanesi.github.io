@@ -1,0 +1,180 @@
+.dark-section{
+  background-color:#e4f1f7;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+#anasayfa{
+  text-align:center;
+  padding:40px;
+  background:url(../js/img/Anket.jpg) no-repeat;
+  background-size:cover;
+  margin-top:50px;
+}
+
+#anasayfa .jumbotron{
+  padding:20px;
+}
+
+#anasayfa .jumbotron{
+  border-radius:20px;
+  padding:40px;
+  background-color:rgba(255,255,255,0.75);
+  max-width:800px;
+  margin:0 auto;
+}
+
+.navbar-default{
+  background-color:#c50d91;
+  border-color:rgb(197,13,145);
+}
+
+@media (max-width:767px) {
+  #anasayfa .jumbotron{
+    padding:20px;
+  }
+}
+
+.dark-section{
+  background-color:#d4e5f5;
+}
+
+.site-section{
+  text-align:center;
+  padding-bottom:70px;
+}
+
+.site-section h1{
+  font-weight:normal;
+  margin-bottom:30px;
+  margin-top:60px;
+}
+
+#welcome p{
+  max-width:800px;
+  font-size:20px;
+  margin:0 auto;
+  color:#666;
+}
+
+.site-section{
+  text-align:center;
+  padding:60px 0;
+}
+
+#why .item{
+  padding-top:36px;
+}
+
+#why .item h2{
+  font-weight:normal;
+  margin-top:13px;
+  margin-bottom:20px;
+  font-size:24px;
+}
+
+#why .item p{
+  color:#6f767a;
+}
+
+#why .item i{
+  font-size:48px;
+  color:#c50d91;
+}
+
+#why .item{
+  margin-top:30px;
+}
+
+div#why.container.site-section{
+  padding-top:0px;
+}
+
+#logo{
+  max-height:37px;
+  margin-left:-167px;
+  margin-top:-7px;
+  display:inline-block;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+  background-color:rgb(68,52,63);
+}
+
+#footer.col-md-12{
+  background-color:rgb(197,13,145);
+  padding-top:10px;
+  padding-bottom:10px;
+  margin:0px auto;
+  text-align:center;
+}
+
+p#footeryazi{
+  color:#c8c6c7;
+  margin-top:4px;
+}
+
+a{
+  color:white;
+}
+#sonuc
+{
+  margin-top: 50px;
+  margin-bottom: -20px;
+}
+.lbl
+{
+ margin: 10px; 
+}
+#s1{
+  width: 22%;
+  max-width: 22%;
+}
+#s2{
+  width: 22%;
+  max-width: 22%;
+}
+#delete{
+float: right; 
+}
+.sutun
+{
+  width: 15%;
+  max-width: 15%;
+}
+.c
+{
+  width: 20%;
+  max-width: 20%;
+}
+#giris
+{
+ width: 100%;
+ height: 100%;
+}
+#cerceve 
+{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#sol 
+{
+  width: 100%;
+  margin-top: 100px;
+}
+#sag 
+{
+  width: 100%;
+  margin-top: 100px;
+}
+#formekrani
+{
+  width: 30%;
+  position: fixed;
+  top: 175px;
+  left: 15%;
+  right: 55%;
+}

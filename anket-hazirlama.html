@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online </title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Kendicssim.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><strong style="color:#fff;">Online Anketör</strong><img src="js/img/img_145403.png" id="logo"></a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li  role="presentation"><a href="index.html" style="color:#fff;">Hoşgeldiniz </a></li>
+                <li  role="presentation"><a href="anket-hazirlama.html" style="color:#fff;">Anket Hazırlama</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+    <div class="container" >
+        <div class="row">
+                
+            <div class="col-md-12">
+                <div id='cssmenu'>
+                    <ul>
+                       <li class='active' id="buyuk" ><a href='#' id="buyu">OnlineAnketor</a></li>
+                       
+                       
+                    </ul>
+                    </div>
+                </div>
+                
+                    <div class="col-md-12">
+                            
+                    </div>
+                
+
+<div class="col-md-4"><img src="js/img/sol.jpg" id="sol"></div>
+<div class="col-md-4" id="ortakolon">
+    <center>
+    <div class="anketbas" id="anket" style="margin-top:70px;"><h1>Online Anketör</h1>
+    <label class="lbl" id="lblSoru"> Sorunuzu Ekleyiniz </label>
+    <input id="txtSoru" type="text" class="form-control txt" placeholder="Anket Sorunuz" onfocus=" this.value='';" >
+    <label class="lbl" id="i">Soru Eklediğinizde Tabloya Eklenecektir..</label>
+    <div id="form1">
+    <label class="lbl" id="lbl1"> 1. Onay Kutusu </label>
+    <input id="check1" type="text" class="form-control txt" placeholder="Sorulan Anket Sorusu için 1. Cevabınız"  onfocus=" this.value='';">
+    <label class="lbl" id="lbl2"> 2. Onay Kutusu </label>
+    <input id="check2" type="text" class="form-control txt" placeholder="Sorulan Anket Sorusu için 2. Cevabınız"  onfocus=" this.value='';"> 
+    <label class="lbl" id="lbl3">3. Onay Kutusu </label>
+    <input id="check3" type="text" class="form-control txt" placeholder="Sorulan Anket Sorusu için 3. Cevabınız"  onfocus=" this.value='';"> 
+    <label class="lbl" id="lbl4">4. Onay Kutusu </label>
+    <input id="check4" type="text" class="form-control txt" placeholder="Sorulan Anket Sorusu için 4. Cevabınız"  onfocus=" this.value='';"> 
+    <label class="lbl" id="lbl5">5. Onay Kutusu </label>
+    <input id="check5" type="text" class="form-control txt" placeholder="Sorulan Anket Sorusu için 5. Cevabınız"  onfocus=" this.value='';"> 
+    <label class="lbl" id="lblGonder">Gönder Butonuna İsim Verme</label>
+    <input id="txtBtn" type="text" class="form-control txt" placeholder="Boş Geçerseniz Standart 'Gönder' Yazılır."  onfocus=" this.value='';">
+
+    
+ <br>
+ <div id="uyari"></div> 
+ 
+    <br>
+    <button id="btnKaydet" class="btn btn-danger">Anket Ekle</button>
+    <button class="btn btn-primary btnTemizle" id="temizle1" >Temizle</button>
+    <br>
+    
+</div>
+
+<br>
+<div>
+    <button id="btnSoru" class="btn btn-danger" >Soru Ekle</button> 
+    <button class="btn btn-warning" id="btniptal" onClick="window.location.reload(false)" >İptal</button>
+    <button class="btn btn-primary btnTemizle" id="temizle2" >Temizle</button>
+</div>
+    
+    </div>
+</center>
+</div>
+<div class="col-md-4"><img src="js/img/sag.jpg" id="sag"></div>
+
+<!-- 2. satır veri çıktısı -->
+<div class="col-md-12" id="altkolon"> 
+        <br>
+        <div id="sonuc"> </div> 
+        <div id="sonuc2"> </div>
+        <div>
+            <table id="table1" class="table table-hover"> 
+    <tr></tr>
+            </table>
+            
+        <br>
+        <button class="btn btn-success " style="float:right;" id="btnGonder"><div id="txtBtn2"> </div></button>
+        <br>
+        <br>
+        </div>
+        
+    
+    
+        
+    </div>
+
+
+</div>
+
+
+    </div>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            
+    
+            $(document).ready(function(){ 
+                $("#ortakolon").css({
+                "display":"inline-block",
+                "opacity":"0.0"
+            })
+            $("#altkolon").css({
+                "display":"inline-block",
+                "opacity":"0.0"
+            })
+            $("#ortakolon").animate({
+                "opacity":"1.0"
+            },1000)
+            $("#altkolon").animate({
+                "opacity":"1.0"
+            },1000)
+            $("#sol").css({
+                "display":"inline-block",
+                "opacity":"0.0"
+            })
+            $("#sol").animate({
+                "opacity":"1.0"
+            },1000)
+            $("#sag").css({
+                "display":"inline-block",
+                "opacity":"0.0"
+            })
+            $("#sag").animate({
+                "opacity":"1.0"
+            },1000)
+            })
+            
+                
+            
+            $("#btnTemiz").click(function(){
+                $("#kullaniciadi").val("");
+                $("#parola").val("");
+    
+            })
+    
+            
+    
+            $("#btnGonder").css({
+                "display":"none"
+            })
+            $("#ortakolon").css({
+                "display":"none"
+            })
+            $("#altkolon").css({
+                "display":"none"
+            })
+    
+            $("#i").css({
+                "display":"none"
+            })
+            $("#btniptal").css({
+                "display":"none"
+            })
+    
+            $("#sonuc").css({
+                "display":"none" 
+            })
+    
+            $("#sonuc2").css({
+                "display":"none" 
+            })
+    
+            $("#adsoyad").css({
+                "display":"none" 
+            })
+            $("#dogtar").css({
+                "display":"none"
+            })
+            $("#mesajı").css({
+                "display":"none"
+            })
+            $("#temizle2").css({
+                "display":"none"
+            })
+           
+            
+            $("#txtSoru").val('');
+            $("#check1").val('');
+            $("#check2").val('');
+            $("#check3").val('');
+            $("#check4").val('');
+            $("#check5").val('');
+            $("#txtBtn").val('');
+    
+          $("#btnSoru").css({
+              "display":"none"
+          })
+    
+    
+    
+    $(".btnTemizle").click(function(){
+        
+        $("#txtSoru").val('');
+        $("#check1").val('');
+        $("#check2").val('');
+        $("#check3").val('');
+        $("#check4").val('');
+        $("#check5").val('');
+        $("#txtBtn").val('');
+    
+    })
+    
+    
+    
+    
+    var kayitlar = [];
+    
+          $("#btnKaydet").click(function () {
+    
+            var soru = $("#txtSoru").val();
+            var c1 = $("#check1").val();
+            var c2 = $("#check2").val();
+            var c3 = $("#check3").val();
+            var c4 = $("#check4").val();
+            var c5 = $("#check5").val();
+    
+    
+            if (soru == "" || c1 == "" || c2 == "" || c3 == "" || c4 == "" || c5== "") {
+                $("#uyari").fadeIn(1000);
+              $("#uyari").html("Lütfen Tüm Alanları Doldurunuz!");
+              $("#uyari").removeClass();
+              $("#uyari").addClass("alert alert-danger");
+              $("#uyari").fadeOut(3000);
+              return false;
+            }
+    
+            var veri = new Object();
+            veri["soru"] = soru;
+            veri["c1"] = c1;
+            veri["c2"] = c2;
+            veri["c3"] = c3;
+            veri["c4"] = c4;
+            veri["c5"] = c5;
+            kayitlar.push(veri);
+    
+    
+            console.log(JSON.stringify(kayitlar));
+            $.sonucYaz();
+          });
+    
+          $.sonucYaz = function () {
+            var tb = "<table class='table' ><tr class='bg-primary'>";
+            $.each(kayitlar, function (i, kayit) {
+    
+              tb += "<td id='s2'>Soru</td><td id='onay1' align='center' class='sutun'>" + kayit.c1 + "</td><td id='onay2' align='center' class='sutun'>" + kayit.c2 + "</td><td id='onay3' align='center' class='sutun'>" + kayit.c3 + "</td><td id='onay4' align='center' class='sutun'>" + kayit.c4 + "</td><td id='onay5' align='center' class='sutun'>" + kayit.c5 + "</td><td id='onay5' ></td></tr>";
+            });
+            tb += "</table>";
+    
+            $("#sonuc").html(tb);
+    
+            var soruu = $("#txtSoru").val();
+            
+            if (soruu == "") {
+              alert("Soru Yazınız!");
+              return false;
+            }
+            $("#table1").append("<tr class='bg-info'><td id='s1'>" + soruu + "</td><td ><center><input type='checkbox'  name='c1' class='c'></center></td><td ><center><input type='checkbox' name='c2' class='c' ></center></td><td ><center><input type='checkbox' name='c3' class='c' ></center></td><td ><center><input type='checkbox' name='c3' class='c' ></center></td><td ><center><input type='checkbox' name='c3' class='c' ></center></td><td style='width:50px;'><button class='btn btn-danger sill'  id='delete'>Sil</button></td></tr>");
+            
+            $(document).on("click", ".sill", function () {
+            var satir = $(this).closest("tr");
+            satir.remove();
+            })
+    
+            $("#sonuc").css({
+                "display":"inherit" 
+            })
+            $("#sonuc").css({
+                "opacity":"0.0" 
+            })
+            $("#sonuc").animate({
+                "opacity":"1.0" 
+            })
+            $("#sonuc2").css({
+                "display":"inherit" 
+            })
+            $("#sonuc2").css({
+                "opacity":"0.0" 
+            })
+            $("#sonuc2").animate({
+                "opacity":"1.0" 
+            })
+            $("#i").css({
+                "display":"inline-block"
+            })
+            $("#btnGonder").css({
+                "display":"inherit" 
+            })
+            $("#btnGonder").css({
+                "opacity":"0.0" 
+            })
+            $("#btnGonder").animate({
+                "opacity":"1.0" 
+            })
+    
+    
+          $("#btnSoru").css({
+              "display":"inline"
+          })
+          $("#temizle2").css({
+              "display":"inline-block"
+          })
+          $("#txtSoru").css({
+        "display":"inherit"
+    })
+    $("#lblSoru").css({
+        "display":"inherit"
+    })
+    $("#btniptal").css({
+        "display":"inline"
+    })
+    $("#form1").fadeOut(1000);
+    
+    $("#btnTemizle").fadeIn(1000);
+    
+            
+            var deger = $("#txtBtn").val();
+            
+            if (deger == "")
+            {
+                $("#txtBtn2").html("Gönder"); 
+            }
+            else{
+            $("#txtBtn2").html(deger);    
+            } 
+
+            $("#txtSoru").val('');
+            $("#check1").val('');
+            $("#check2").val('');
+            $("#check3").val('');
+            $("#check4").val('');
+            $("#check5").val('');
+            $("#txtBtn").val('');
+       
+        };
+        
+    
+    
+          $("#btnSoru").click(function () {
+            
+    
+            var soru = $("#txtSoru").val();
+            
+            if (soru == "") {
+              alert("Soru Yazınız!");
+              return false;
+            }
+            $("#table1").append("<tr class='bg-info'><td id='s1'>" + soru + "</td><td ><center><input type='checkbox'  name='c1' class='c'></center></td><td ><center><input type='checkbox' name='c2' class='c' ></center></td><td ><center><input type='checkbox' name='c3' class='c' ></center></td><td ><center><input type='checkbox' name='c3' class='c' ></center></td><td ><center><input type='checkbox' name='c3' class='c' ></center></td><td style='width:50px;'><button class='btn btn-danger sill'  id='delete'>Sil</button></td></tr>");    
+            
+            
+            $(document).on("click", ".sill", function () {
+            var satir = $(this).closest("tr");
+            satir.remove();
+            })
+            
+            
+            $("#txtSoru").val('');
+            $("#check1").val('');
+            $("#check2").val('');
+            $("#check3").val('');
+            $("#check4").val('');
+            $("#check5").val('');
+            $("#txtBtn").val('');
+            $("#i").css({
+                "display":"none"
+            })
+    
+    
+    
+            
+        });
+    
+    
+    
+    
+    });
+            
+        
+      </script>
+    
+</body>
+
+</html>
